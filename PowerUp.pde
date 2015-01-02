@@ -67,6 +67,7 @@ class PowerUp extends GameObject {
     PVector pp = new PVector(p.x, p.y);
 
     PVector seekForce = seek(pp);
+    
     seekForce.mult(1.0);
     
     applyForce(avoidForce);

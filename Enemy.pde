@@ -23,7 +23,7 @@ class Enemy extends GameObject {
     acc = new PVector(0, 0);
     vel = new PVector(0, -2);
 
-    maxSpeed = 4;
+    maxSpeed = 2.5;
     maxForce = 0.1;
 
     loadShape("enemy.txt",points);

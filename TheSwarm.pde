@@ -1,4 +1,4 @@
-/*                                                               
+  /*                                                               
  *                                                                
  *         ,----,                                                                                                ,---,  
  *       ,/   .`|                                                                                             ,`--.' |  
@@ -57,11 +57,15 @@ ScoreManager sm;
 boolean debug = false;
 boolean stats = false;
 
+boolean gameOver;
+
 PFont f;
 PFont ff;
 
 void setup() {
   size(1280, 768, P3D);
+
+  gameOver = false;
 
   f = createFont("Gridnik.ttf", 32, true);
   ff = createFont("Gridnik.ttf", 128, true);
@@ -107,10 +111,15 @@ void setup() {
 void update() {
   // update the player
   p.update();
+  if(p.lives < 0) {
+    gameOver = true;
+    p.lives = 0;
+  }
+  
 
   stageOffset = PVector.sub(center, p);
   stageMouse = PVector.sub(new PVector(mouseX, mouseY), stageOffset);  
-  if (p.lives > -1) {
+  if (!gameOver) {
     // get the aim from the player (angle)
     bm.setAim(p.getAim());
 
@@ -145,10 +154,10 @@ void draw() {
   a.draw();
   pm.draw();
   sm.draw();
+blendMode(NORMAL);
+  if (!gameOver) {
 
-  if (p.lives > -1) {
-
-    blendMode(NORMAL);
+    
     p.draw();
     em.draw();
     bm.draw();

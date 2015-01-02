@@ -142,7 +142,7 @@ class EnemySpawner extends GameObject {
   }
 
   void draw() {
-    if (spawn) {
+  //  if (spawn) {
       pushMatrix();
       translate(this.x, this.y);
       noFill();
@@ -156,7 +156,7 @@ class EnemySpawner extends GameObject {
         text(a.getGlobalBounds().getRight(), this.width, this.height+40);
       }
       popMatrix();
-    }
+   // }
   }
 }
 
