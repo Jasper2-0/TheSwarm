@@ -28,4 +28,5 @@ How long can you hold out against The Swarm?
 
 
 [Download for OSX] (https://github.com/Jasper2-0/TheSwarm/releases/download/1.0/TheSwarm-1.0-OSX.zip)
+
 [Download for Windows] (https://github.com/Jasper2-0/TheSwarm/releases/download/1.0/TheSwarm-1.0-win32.zip)
